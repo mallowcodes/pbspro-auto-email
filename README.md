@@ -21,4 +21,5 @@ you can see help by running python eemail_new.py -h
 RUN:
 
 run by entering bash genericchain.bsh
+
 you can edit the name of the genericchain.bsh file to your job name if you want
