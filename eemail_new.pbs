@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#     job name:
+#PBS -N email 
+#     how many cpus?
+#PBS -l select=1:ncpus=1:mem=1GB
+
+#     How long to run the job? (hours:minutes:seconds)
+#PBS -l walltime=00:01:00
+
+#     Environmental varibles to make it work: you may need PBS -P -M 
+
+#PBS -m abe
+#PBS -j oe
+
+module load python
+cd $PBS_O_WORKDIR
+ 
+#     Launching the job
+suffix=".pbsserver"
+id=${id%$suffix}
+outid="${jobname}.o${id}"
+
+python eemail_new.py 'Artemis output '"${jobname}"' '"$id" -b "$outid" -b "$outid"'_usage'

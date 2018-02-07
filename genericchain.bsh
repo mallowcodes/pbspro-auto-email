@@ -1,0 +1,7 @@
+#!/bin/bash
+id=$(qsub yourjobscript.pbs) # change to your job's pbs script 
+jobname=yourjobname  # change to your job name as specified in your job's pbs script
+
+export jobname
+export id
+two=$(qsub -W depend=afterany:$id -V eemail_new.pbs)
